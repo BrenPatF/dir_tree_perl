@@ -228,7 +228,7 @@ sub listTree {
             }
         }
 		$timer->incrementTime ("File Sort $call_id");
-		if (length ($filelist) > 0) {
+		if (length ($filelist)) { # > 0 - remove this because it causes a warning in later Perl versions (and is unnecessary)
 			print &indent (substr ($DASHES, 0, $maxlen_stem), $level+1, $maxlen)."\n".$filelist.&indent (substr ($DASHES, 0, $maxlen_stem), $level+1, $maxlen)."\n";
 		}
         @childer = @$ref_subdirs;
